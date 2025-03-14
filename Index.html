@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .contain {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        label {
+            padding: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Perhitungan Luas Sederhana</h1>
+    <div class="container">
+        <!-- Input Persegi Panjang -->
+        <div class="contain">
+            <label for="Persegi Panjang">Luas Persegi Panjang</label>
+            <input type="number" id="panjang" placeholder="Masukan Panjang">
+            <input type="number" id="lebar" placeholder="Masukan Lebar">
+            <button id="hitungPersegiPanjang">Hitung</button>
+            <button id="clearPersegiPanjang">Clear</button>
+            <p id="luaspersegipanjang">Hasil</p>
+        </div>
+        <!-- Input Bujur Sangkar -->
+        <div class="contain">
+            <label for="Busur sangkar">Luas Busur Sangkar</label>
+            <input type="number" id="Sisi" placeholder="Masukan Sisi">
+            <button id="hitungBujurSangkar">Hitung</button>
+            <button id="clearBujurSangkar">Clear</button>
+            <p id="luasbujursangkar">Hasil</p>
+        </div>
+        <!-- Input Segitiga -->
+        <div class="contain">
+            <label for="Segitiga">Luas Segitiga</label>
+            <input type="number" id="Alas" placeholder="Masukan Alas">
+            <input type="number" id="Tinggi" placeholder="Masukan Tinggi">
+            <button id="hitungSegitiga">Hitung</button>
+            <button id="clearSegitiga">Clear</button>
+            <p id="luassigitiga">Hasil</p>
+        </div>
+    </div>
+    <script>
+        // Persegi Panjang
+        // Deklarasi Variabel Persegi Panjang
+        let panjang = document.getElementById('panjang');
+        let lebar = document.getElementById('lebar');
+        let hitungPersegiPanjang = document.getElementById('hitungPersegiPanjang');
+        let luaspersegipanjang = document.getElementById('luaspersegipanjang');
+
+        //Menghitung Luas Persegi Panjang
+        hitungPersegiPanjang.addEventListener('click', function () {
+            luaspersegipanjang.innerHTML = panjang.value * lebar.value;
+        });
+        // Clear Inputan Persegi Panjang
+        let clearPersegiPanjang = document.getElementById('clearPersegiPanjang');
+        clearPersegiPanjang.addEventListener('click', function () {
+            luaspersegipanjang.innerHTML = '';
+            panjang.value = '';
+            lebar.value = '';
+        });
+
+        // Bujur Sangkar
+        // Deklarasi Variabel untuk Bujur Sangkar
+        let Sisi = document.getElementById('Sisi');
+        let hitungBujurSangkar = document.getElementById('hitungBujurSangkar');
+        let luasbujursangkar = document.getElementById('luasbujursangkar');
+
+        //Menghitung Luas Bujur Sangkar
+        hitungBujurSangkar.addEventListener('click', function () {
+            luasbujursangkar.innerHTML = Sisi.value * Sisi.value;
+        });
+
+        // Clear Inputan Bujur Sangkar
+        let clearBujurSangkar = document.getElementById('clearBujurSangkar');
+        clearBujurSangkar.addEventListener('click', function () {
+            luasbujursangkar.innerHTML = '';
+            Sisi.value = '';
+        });
+
+        // Segitiga
+        // Deklarasi Variabel untuk Segitiga
+        let Alas = document.getElementById('Alas');
+        let Tinggi = document.getElementById('Tinggi');
+        let hitungSegitiga = document.getElementById('hitungSegitiga');
+        let luassigitiga = document.getElementById('luassigitiga');
+
+        // Menghitung Luas Segitiga
+        hitungSegitiga.addEventListener('click', function () {
+            luassigitiga.innerHTML = Alas.value * Tinggi.value / 2;
+        });
+        // Clear Inputan Segitiga
+        let clearSegitiga = document.getElementById('clearSegitiga');
+        clearSegitiga.addEventListener('click', function () {
+            luassigitiga.innerHTML = '';
+            Alas.value = '';
+            Tinggi.value = '';
+        });
+
+    </script>
+</body>
+
+</html>
